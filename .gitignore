@@ -1,0 +1,8 @@
+# Node Modules
+/node_modules/
+
+# Dependency Cache
+/package-lock.json
+
+# Environment Variables
+/.env
