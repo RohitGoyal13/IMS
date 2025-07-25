@@ -1,0 +1,113 @@
+openapi: 3.0.0
+info:
+  title: Inventory Management System API
+  version: 1.0.0
+  description: Backend APIs for Inventory Management
+
+servers:
+  - url: http://localhost:5000
+
+paths:
+  /register:
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        "201":
+          description: User created
+  /login:
+    post:
+      summary: Login user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        "200":
+          description: JWT token
+  /products:
+    get:
+      summary: Get all products
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of products
+    post:
+      summary: Add product
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Product"
+      responses:
+        "201":
+          description: Product created
+  /products/{id}/quantity:
+    put:
+      summary: Update product quantity
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quantity:
+                  type: integer
+      responses:
+        "200":
+          description: Updated product
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    Product:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        sku:
+          type: string
+        image_url:
+          type: string
+        description:
+          type: string
+        quantity:
+          type: integer
+        price:
+          type: number
