@@ -75,7 +75,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODM1YWI4NTg2NzUwNWZmZDdiMDhlMSIsImlhdCI6MTc1MzQ2MzE2MCwiZXhwIjoxNzUzNTQ5NTYwfQ.B0hZ6Nb1b9wwEU0XnI1J-68LFdcPQMgOf6TLsrfDMnY",
+									"value": "",
 									"type": "string"
 								}
 							]
@@ -101,7 +101,7 @@
 							"path": [
 								"api",
 								"products",
-								"6883ba0acc9bfe1d21b0a83b",
+								"",
 								"quantity"
 							]
 						}
@@ -116,7 +116,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODM1YWI4NTg2NzUwNWZmZDdiMDhlMSIsImlhdCI6MTc1MzQ2MzE2MCwiZXhwIjoxNzUzNTQ5NTYwfQ.B0hZ6Nb1b9wwEU0XnI1J-68LFdcPQMgOf6TLsrfDMnY",
+									"value": "<JWT_TOKEN>",
 									"type": "string"
 								}
 							]
@@ -148,7 +148,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODM1YWI4NTg2NzUwNWZmZDdiMDhlMSIsImlhdCI6MTc1MzQ2MzE2MCwiZXhwIjoxNzUzNTQ5NTYwfQ.B0hZ6Nb1b9wwEU0XnI1J-68LFdcPQMgOf6TLsrfDMnY",
+							"value": "",
 							"type": "string"
 						}
 					]
