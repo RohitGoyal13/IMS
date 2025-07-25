@@ -55,6 +55,7 @@ export const Login = async (req, res) => {
              );
 
       res.status(200).json({
-        message : "Login Successful"
+        message : "Login Successful",
+        access_token: token
       });
     };
