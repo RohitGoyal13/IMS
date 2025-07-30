@@ -1,6 +1,7 @@
 import React , {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { loginsuccess } from '../features/auth/authSlice';
+import '../styles/login.css';
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const Login = () => {
     }
 
     return(
-        <div className="login-contianer">
+        <div className="login-container">
             <form onSubmit={handleLogin} className='login-form'>
                 <h2>Login</h2>
                 <input 
