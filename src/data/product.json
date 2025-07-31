@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Dove Shampoo",
+    "type": "Personal Care",
+    "sku": "DS-001",
+    "image_url": "https://m.media-amazon.com/images/I/71v05iYt9UL._SX679_.jpg",
+    "description": "Moisturizing shampoo for soft hair",
+    "quantity": 12,
+    "price": 120
+  },
+  {
+    "name": "Puma Shoes",
+    "type": "Footwear",
+    "sku": "PS-101",
+    "image_url": "https://m.media-amazon.com/images/I/71fO4GEG5YL._UX695_.jpg",
+    "description": "Running shoes for men",
+    "quantity": 5,
+    "price": 2000
+  },
+  {
+    "name": "Dairy Milk",
+    "type": "Confectionery",
+    "sku": "DM-303",
+    "image_url": "https://m.media-amazon.com/images/I/61YzX4Z3EQL._SX679_.jpg",
+    "description": "Delicious chocolate",
+    "quantity": 30,
+    "price": 40
+  }
+]
