@@ -2,11 +2,15 @@ import React , {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { loginsuccess } from '../features/auth/authSlice';
 import '../styles/login.css';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Login = () => {
     const dispatch = useDispatch();
     const [username,setUsername] = useState('');
     const [password,setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -15,7 +19,7 @@ const Login = () => {
         const response =  await fetch('http://localhost:5000/api/login' , {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+            'Content-Type': 'application/json'
             },
             body: JSON.stringify({ username,password})
         })
@@ -25,6 +29,7 @@ const Login = () => {
         if(response.ok){
             dispatch(loginsuccess({token : data.token, username}));
             alert("Login successful");
+            navigate('/dashboard');
         }
         else{
             alert("Login failed: " + data.message || "Something went wrong");
