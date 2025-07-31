@@ -1,10 +1,11 @@
 import react,{ useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import '../styles/addProduct.css';
 
 const AddProduct = () => {
-    const {token} = useSelector( (state) => state.auth);
+    const token = useSelector((state) => state.auth.token);
+    console.log("Token from Redux:", token);
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
