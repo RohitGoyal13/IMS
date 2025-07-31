@@ -10,7 +10,8 @@
     background-color: rgb(142, 194, 135);
     padding: 0rem 2rem 1rem 1rem;
     border-radius: 8px;
-    width: 300px;
+    width: 400px;
+    height: 300px;
     box-shadow: 0 0 10px;
     text-align: center;
 }
@@ -45,10 +46,26 @@
     font-weight: bolder;
     font-size: 1rem;
     color: beige;
+    margin-top: 0.4rem;
     
 }
 
 .login-form button:hover {
             color: rgb(8, 199, 110);
         background-color: rgb(106, 4, 55);
+}
+
+.login-form p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.login-form .register-link {
+    color: rgb(72, 25, 2);
+    text-decoration: none;
+}
+
+.login-form .register-link:hover {
+    color: rgb(217, 30, 177);
+    text-decoration: underline;
 }

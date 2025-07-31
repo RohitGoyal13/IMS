@@ -8,9 +8,34 @@ const Login = () => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
-        dispatch(loginsuccess({email}));
+        
+        try{
+        const response =  await fetch('http://localhost:5000/api/login' , {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email,password})
+        })
+
+        const data = await response.json();
+
+        if(response.ok){
+            dispatch(loginsuccess({token : data.token, email}));
+            alert("Login successful");
+        }
+        else{
+            alert("Login failed: " + data.message || "Something went wrong");
+            console.error("Error:", data.message);
+            setEmail('');
+            setPassword('');
+        }
+        }
+        catch(error){
+            console.error("Login failed:", error);
+        }
     }
 
     return(
@@ -32,6 +57,7 @@ const Login = () => {
                 required
                 />
                 <button type='submit'>Login</button>
+                <p>Don't have an account? <a href="/register" className='register-link'>Register here</a></p>
             </form>
         </div>
     )
