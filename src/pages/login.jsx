@@ -5,7 +5,7 @@ import '../styles/login.css';
 
 const Login = () => {
     const dispatch = useDispatch();
-    const [email,setEmail] = useState('');
+    const [username,setUsername] = useState('');
     const [password,setPassword] = useState('');
 
     const handleLogin = async (e) => {
@@ -17,19 +17,19 @@ const Login = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ email,password})
+            body: JSON.stringify({ username,password})
         })
 
         const data = await response.json();
 
         if(response.ok){
-            dispatch(loginsuccess({token : data.token, email}));
+            dispatch(loginsuccess({token : data.token, username}));
             alert("Login successful");
         }
         else{
             alert("Login failed: " + data.message || "Something went wrong");
             console.error("Error:", data.message);
-            setEmail('');
+            setUsername('');
             setPassword('');
         }
         }
@@ -44,9 +44,9 @@ const Login = () => {
                 <h2>Login</h2>
                 <input 
                 type="text" 
-                placeholder='Enter your Username or Email'
-                value={email}
-                onChange = { (e) => setEmail(e.target.value)}
+                placeholder='Enter your Username'
+                value={username}
+                onChange = { (e) => setUsername(e.target.value)}
                 required
                 />
                 <input 

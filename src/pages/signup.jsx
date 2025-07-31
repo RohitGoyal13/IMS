@@ -1,12 +1,15 @@
 import react,{useState} from 'react';
 import axios from 'axios';
 import '../styles/signup.css';
+import {useNavigate} from 'react-router-dom';
 
 const Signup = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    const navigate = useNavigate();
 
     const handleSignup = async (e) => {
         e.preventDefault();
@@ -21,6 +24,7 @@ const Signup = () => {
         setEmail(''); 
         setUsername('');
         setPassword('');
+        navigate('/login');
     }catch(error){
         console.error("Signup failed:", error);
         alert("Signup failed: " + (error.response?.data?.message || "Something went wrong"));
