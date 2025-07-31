@@ -53,8 +53,8 @@ const AddProduct = () => {
 
     return(
         <div className="add-product-container">
-            <h2>Add Product</h2>
             <form onSubmit={handleSubmit} className="add-product-form">
+            <h2>Add Product</h2>
             <input type="text" name="name" placeholder='Enter Product Name' value={formData.name} onChange={handleChange} required />
             <input type="text" name="type" placeholder='Enter Product Type' value={formData.type} onChange={handleChange} required />
             <input type="text" name="sku" placeholder='Enter Product SKU' value={formData.sku} onChange={handleChange} required />
