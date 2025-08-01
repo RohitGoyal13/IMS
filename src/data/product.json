@@ -3,27 +3,117 @@
     "name": "Dove Shampoo",
     "type": "Personal Care",
     "sku": "DS-001",
-    "image_url": "https://m.media-amazon.com/images/I/71v05iYt9UL._SX679_.jpg",
+    "imgURL": "https://assets.unileversolutions.com/v1/766539.jpg",
     "description": "Moisturizing shampoo for soft hair",
     "quantity": 12,
     "price": 120
   },
   {
-    "name": "Puma Shoes",
-    "type": "Footwear",
+    "name": "DELL Inspiron 15",
+    "type": "Electronics",
     "sku": "PS-101",
-    "image_url": "https://m.media-amazon.com/images/I/71fO4GEG5YL._UX695_.jpg",
-    "description": "Running shoes for men",
+    "imgURL": "https://www.notebookcheck.net/uploads/tx_nbc2/Dell_Inspiron_15_3520__1_.jpg",
+    "description": "15-inch laptop with powerful performance",
     "quantity": 5,
-    "price": 2000
+    "price": 60000
   },
   {
     "name": "Dairy Milk",
     "type": "Confectionery",
     "sku": "DM-303",
-    "image_url": "https://m.media-amazon.com/images/I/61YzX4Z3EQL._SX679_.jpg",
+    "imgURL": "https://static2.medplusmart.com/products/CADB0009_L.jpg",
     "description": "Delicious chocolate",
     "quantity": 30,
     "price": 40
+  },
+  {
+    "name": "Wireless Mouse",
+    "type": "Electronics",
+    "sku": "WM-001",
+    "imgURL": "https://m.media-amazon.com/images/I/61LtuGzXeaL._AC_SL1500_.jpg",
+    "description": "Ergonomic wireless mouse with adjustable DPI.",
+    "quantity": 40,
+    "price": 699.00
+  },
+  {
+    "name": "Notebook (Hardcover)",
+    "type": "Stationery",
+    "sku": "NB-123",
+    "imgURL": "https://i5.walmartimages.com/asr/819e74e4-8835-4c29-a109-74d2ea293a27.09b50732561f75f206e6b7d97894c761.jpeg",
+    "description": "200 pages ruled notebook with hardcover and elastic band.",
+    "quantity": 120,
+    "price": 249.00
+  },
+  {
+    "name": "Running Shoes",
+    "type": "Footwear",
+    "sku": "RS-901",
+    "imgURL": "https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/04/TopoAthletic_Magnifly3.jpg",
+    "description": "Lightweight breathable running shoes for men.",
+    "quantity": 32,
+    "price": 1799.00
+  },
+  {
+    "name": "Smart Watch",
+    "type": "Electronics",
+    "sku": "SW-330",
+    "imgURL": "https://m.media-amazon.com/images/I/61imYpK33qL._AC_SL1500_.jpg",
+    "description": "Touchscreen smartwatch with fitness tracking features.",
+    "quantity": 25,
+    "price": 2899.00
+  },
+  {
+    "name": "Coffee Mug",
+    "type": "Kitchenware",
+    "sku": "CM-456",
+    "imgURL": "https://m.media-amazon.com/images/I/61fH3O+p23L._AC_SL1500_.jpg",
+    "description": "Ceramic coffee mug with motivational quote.",
+    "quantity": 60,
+    "price": 199.00
+  },
+  {
+    "name": "Portable Charger",
+    "type": "Electronics",
+    "sku": "PC-789",
+    "imgURL": "https://m.media-amazon.com/images/I/612vaudnEkL._AC_SL1500_.jpg",
+    "description": "10000mAh power bank with dual USB ports.",
+    "quantity": 45,
+    "price": 999.00
+  },
+  {
+    "name": "Yoga Mat",
+    "type": "Fitness",
+    "sku": "YM-212",
+    "imgURL": "https://tse4.mm.bing.net/th/id/OIP.70QorvFW7wTH1SDC1IY4awHaEk?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "description": "Eco-friendly non-slip yoga mat with carrying strap.",
+    "quantity": 18,
+    "price": 849.00
+  },
+  {
+    "name": "Desk Lamp",
+    "type": "Home Decor",
+    "sku": "DL-377",
+    "imgURL": "https://i5.walmartimages.com/asr/3c781194-90c1-47d1-8920-96e965546259_1.df66175279c64f0ad3172cc6dacb0a90.jpeg",
+    "description": "LED desk lamp with brightness control and USB port.",
+    "quantity": 27,
+    "price": 1399.00
+  },
+  {
+    "name": "Wireless Keyboard",
+    "type": "Electronics",
+    "sku": "WK-202",
+    "imgURL": "https://asset.conrad.com/media10/isa/160267/c1/-/en/1485458_ZB_01_FB/image.jpg",
+    "description": "Slim wireless keyboard with silent keys.",
+    "quantity": 50,
+    "price": 799.00
+  },
+  {
+    "name": "Sports Water Bottle",
+    "type": "Fitness",
+    "sku": "WB-880",
+    "imgURL": "https://tse2.mm.bing.net/th/id/OIP.vLTNIrOPDBYi4l5LIbU01AHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "description": "1L BPA-free water bottle with flip-top lid.",
+    "quantity": 75,
+    "price": 299.00
   }
 ]

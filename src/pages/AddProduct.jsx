@@ -56,13 +56,13 @@ const AddProduct = () => {
         <div className="add-product-container">
             <form onSubmit={handleSubmit} className="add-product-form">
             <h2>Add Product</h2>
-            <input type="text" name="name" placeholder='Enter Product Name' value={formData.name} onChange={handleChange} required />
-            <input type="text" name="type" placeholder='Enter Product Type' value={formData.type} onChange={handleChange} required />
-            <input type="text" name="sku" placeholder='Enter Product SKU' value={formData.sku} onChange={handleChange} required />
-            <input type="text" name="image_url" placeholder='Enter Product Image URL' value={formData.image_url} onChange={handleChange} required />
-            <textarea name="description" placeholder='Enter Product Description' value={formData.description} onChange={handleChange} required></textarea>
-            <input type="number" name="quantity" placeholder='Enter Product Quantity' value={formData.quantity} onChange={handleChange} required />
-            <input type="number" name="price" placeholder='Enter Product Price' value={formData.price} onChange={handleChange} required />
+            <input type="text" name="name" placeholder='Enter Product Name' value={formData.name || ''} onChange={handleChange} required />
+            <input type="text" name="type" placeholder='Enter Product Type' value={formData.type || ''} onChange={handleChange} required />
+            <input type="text" name="sku" placeholder='Enter Product SKU' value={formData.sku || ''} onChange={handleChange} required />
+            <input type="text" name="imgURL" placeholder='Enter Product Image URL' value={formData.imgURL || ''} onChange={handleChange} required />
+            <textarea name="description" placeholder='Enter Product Description' value={formData.description || ''} onChange={handleChange} required></textarea>
+            <input type="number" name="quantity" placeholder='Enter Product Quantity' value={formData.quantity || ''} onChange={handleChange} required />
+            <input type="number" name="price" placeholder='Enter Product Price' value={formData.price || ''} onChange={handleChange} required />
             <button type="submit">Add Product</button>
             </form>
         </div>
