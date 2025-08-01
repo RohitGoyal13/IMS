@@ -23,7 +23,10 @@ const Dashboard = () => {
         }
       });
       
-      const totalProducts = [...res.data, ...localProducts];
+      const totalProducts = [
+        ...res.data.map( p => ({ ...p , source: 'db' }))
+        , ...localProducts.map( (p,idx)=> ({ ...p , source: 'local', _id: `local-${idx}`}))
+      ];
       setProducts(totalProducts);
     }catch(error){
       console.error("Error fetching products:", error);
@@ -33,6 +36,36 @@ const Dashboard = () => {
   const filteredProducts = products.filter( product => 
     product.name.toLowerCase().includes(searchProduct.toLowerCase())
   );
+
+  const handleQuantitychange = async (id, change) => {
+      setProducts(prev => 
+        prev.map( prod => {
+          if(prod._id === id){
+            const newqty = Math.max(0, prod.quantity + change);
+            return {
+              ...prod,
+              quantity: newqty
+            }
+          }
+          return prod;
+        })
+      )
+
+      const targetProduct = products.find( prod => prod._id === id);
+
+      if(targetProduct && targetProduct.source === 'db'){
+        try{
+          const token = localStorage.getItem('token');
+          await axios.put(
+             `http://localhost:5000/api/products/${id}/quantity`,
+             {quantity : targetProduct.quantity + change},
+             {headers : { Authorization : `Bearer ${token}`}}
+            )
+        }catch(err){
+          console.error("Error while updating the quantity:", err);
+        }
+      }
+  }
 
   return (
     <div className="dashboard">
@@ -57,9 +90,9 @@ const Dashboard = () => {
         {filteredProducts.length > 0 ? filteredProducts.map((prod, idx) => (
           <div key={idx} className="product-card">
             <img src={prod.imgURL} alt={prod.name} />
-            <button>-</button>
-            <button>Quantity</button>
-            <button>+</button>
+            <button onClick={ () => handleQuantitychange(prod._id, -1)} className="quantity-button-1">-</button>
+            <button className="quantity-button-2">Quantity</button>
+            <button onClick={ () => handleQuantitychange(prod._id, 1)} className="quantity-button-3">+</button>
             <h3>{prod.name}</h3>
             <p><b>Price:</b> ₹{prod.price}</p>
             <p><b>Qty:</b> {prod.quantity}</p>

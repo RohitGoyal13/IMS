@@ -62,3 +62,22 @@
   border-radius: 8px;
   width: 700px;
 }
+
+.quantity-button-1, .quantity-button-2, .quantity-button-3 {
+  padding: 0.6rem 1.2rem;
+  background-color: #008cba;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  font-weight: bolder;
+}
+
+.quantity-button-1{
+  background-color: red;
+}
+
+.quantity-button-3{
+  background-color: green;
+}
