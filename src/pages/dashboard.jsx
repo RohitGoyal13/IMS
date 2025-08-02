@@ -22,10 +22,17 @@ const Dashboard = () => {
           'Authorization': `Bearer ${token}`
         }
       });
+
+      const storedlocal = localStorage.getItem('localProductsjson');
+      const parsedlocal = storedlocal ? JSON.parse(storedlocal) : localProducts;
+
+      if(!storedlocal){
+        localStorage.setItem('localProductsjson' , JSON.stringify(localProducts));
+      }
       
       const totalProducts = [
         ...res.data.map( p => ({ ...p , source: 'db' }))
-        , ...localProducts.map( (p,idx)=> ({ ...p , source: 'local', _id: `local-${idx}`}))
+        , ...parsedlocal.map( (p,idx)=> ({ ...p , source: 'local', _id: `local-${idx}`}))
       ];
       setProducts(totalProducts);
     }catch(error){
@@ -64,6 +71,14 @@ const Dashboard = () => {
         }catch(err){
           console.error("Error while updating the quantity:", err);
         }
+      }else if(targetProduct && targetProduct.source === 'local'){
+          const local = JSON.parse(localStorage.getItem('localProductsjson')) || [];
+          const localid = parseInt(id.replace('local-', ''));
+
+          if(!isNaN(localid) && local[localid]){
+            local[localid].quantity = Math.max(0 , local[localid].quantity + change);
+            localStorage.setItem('localProductsjson', JSON.stringify(local));
+          }
       }
   }
 
